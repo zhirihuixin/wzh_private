@@ -208,14 +208,13 @@ def im_detect(net, im, y, boxes=None):
             for j in xrange(len(dets_temp)):
                 keep = np.where(dets_temp[:, -1] >= image_thresh)[0]
                 dets_temp = dets_temp[keep, :]
-        boxes_temp = dets_temp[:, 0:4]
+        boxes_temp = dets_temp[:, 0:4] * im_scales[0]
         im_scales_temp = np.tile(im_scales[0], (len(boxes_temp), 1))
         box_roi = np.hstack((im_scales_temp, boxes_temp)).astype(np.float32, copy=False)
         blobs['rois'] = box_roi
 
         # reshape network inputs
         net.blobs['data'].reshape(*(blobs['data'].shape))
-
         net.blobs['rois'].reshape(*(blobs['rois'].shape))
 
         # do forward
