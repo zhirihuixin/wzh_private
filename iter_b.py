@@ -211,7 +211,7 @@ def im_detect(net, im, y, boxes=None):
         boxes_temp = dets_temp[:, 0:4] * im_scales[0]
         im_scales_temp = np.tile(im_scales[0], (len(boxes_temp), 1))
         box_roi = np.hstack((im_scales_temp, boxes_temp)).astype(np.float32, copy=False)
-        blobs['rois'] = box_roi
+        blobs['rois'] = box_roi.astype(np.float32, copy=False)
 
         # reshape network inputs
         net.blobs['data'].reshape(*(blobs['data'].shape))
