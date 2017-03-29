@@ -205,9 +205,8 @@ def im_detect(net, im, y, boxes=None):
         image_scores = dets_temp[:, -1]
         if len(image_scores) > cfg.TEST.RPN_POST_NMS_TOP_N:
             image_thresh = np.sort(image_scores)[-cfg.TEST.RPN_POST_NMS_TOP_N]
-            for j in xrange(len(dets_temp)):
-                keep = np.where(dets_temp[:, -1] >= image_thresh)[0]
-                dets_temp = dets_temp[keep, :]
+            keep = np.where(dets_temp[:, -1] >= image_thresh)[0]
+            dets_temp = dets_temp[keep, :]
         boxes_temp = dets_temp[:, 0:4] * im_scales[0]
         im_scales_temp = np.tile(im_scales[0], (len(boxes_temp), 1))
         box_roi = np.hstack((im_scales_temp, boxes_temp)).astype(np.float32, copy=False)
