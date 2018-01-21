@@ -8,6 +8,12 @@ sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
 
 sudo ldconfig
 
+cuda 版本
+cat /usr/local/cuda/version.txt
+
+cudnn 版本
+cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+
 
 
 #!/usr/bin/env sh
