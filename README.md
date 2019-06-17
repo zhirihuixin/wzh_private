@@ -62,6 +62,15 @@ Pytorch efficient toolbox (Pet) for Computer Vision.
   
   Update and expand constantly.  Custom extension is supported.
 
+## Updates
+
+v0.1 (18/05/2019)
+- Migrate to PyTorch 1.0.
+
+## Benchmark and model zoo
+
+ Please find detailed model zoo for PET in [`MODEL_ZOO.md`](MODEL_ZOO.md).
+
 ## Installation
  
  Please find detailed installation instructions for PET in [`INSTALL.md`](INSTALL.md).
