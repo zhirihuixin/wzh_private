@@ -1,17 +1,17 @@
-# Installing PytorchEveryThing
+# Installing Pet
 
-This document covers how to install PytorchEveryThing, its dependencies (including Pytorch), and the COCO dataset.
+This document covers how to install Pet, its dependencies (including Pytorch), and the COCO dataset.
 
-- For general information about PytorchEveryThing, please see [`README.md`](README.md).
+- For general information about Pet, please see [`README.md`](README.md).
 
 **Requirements:**
 
 - NVIDIA GPU, Linux, Python3.5
-- Pytorch-0.4, various standard Python packages, and the COCO API; Instructions for installing these dependencies are found below
+- Pytorch-1.1, various standard Python packages, NVIDIA apex and the COCO API; Instructions for installing these dependencies are found below
 
 **Notes:**
 
-- PytorchEveryThing has been tested extensively with CUDA 8.0 and cuDNN 6.0.21.
+- PytorchEveryThing has been tested extensively with CUDA 10.0 and cuDNN 7.5.1.
 
 
 ## Python3.5
@@ -82,38 +82,49 @@ For install opencv3.5, please refer to [`Compile_opencv3.md`](https://github.com
 
 Install Pytorch with CUDA support.
 
-1. Install Pytorch-0.4.0:
+1. Install Pytorch-1.1.0:
 
 ```
-sudo pip3 install torch==0.4.0
+sudo pip3 install https://download.pytorch.org/whl/cu100/torch-1.1.0-cp35-cp35m-linux_x86_64.whl
 ```
 
-2. Install torchvision-0.2.1:
+2. Install torchvision:
 
 ```
-sudo pip3 install torchvision
+sudo pip3 install https://download.pytorch.org/whl/cu100/torchvision-0.3.0-cp35-cp35m-linux_x86_64.whl
 ```
 
+## NVIDIA apex
 
-## PytorchEveryThing
-
-1. Clone the PytorchEveryThing repository:
-
+1. Clone the apex repository
 ```
-# PytorchEveryThing=/path/to/clone/PytorchEveryThing
-git clone https://github.com/soeaver/PytorchEveryThing $PytorchEveryThing
+cd $INSTALL_DIR
+git clone https://github.com/NVIDIA/apex.git
 ```
 
-2. Install Python dependencies:
+2. install apex
 
 ```
-sudo pip3 install -r $PytorchEveryThing/requirements.txt
+cd apex
+sudo python setup.py install --cuda_ext --cpp_ext
 ```
 
-3. Set up `pet`:
+## Pet
+
+1. Clone the Pet repository:
 
 ```
-cd $PytorchEveryThing/pet
+git clone https://github.com/BUPT-PRIV/Pet-dev.git
+
+# mask ops
+cd Pet-dev/pet
+sh make.sh
+```
+
+2. Set up `pet`:
+
+```
+cd $Pet/pet
 
 sh ./make.sh
 ```
