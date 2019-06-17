@@ -23,12 +23,12 @@ Pytorch efficient toolbox (Pet) for Computer Vision.
 
 |                    | norm train | dist train | train by test | cpu train | multi-gpu test | batch test | cpu test |
 |--------------------|:----------:|:----------:|:-------------:|:---------:|:--------------:|:----------:|:--------:|
-| cls                | ✗          | ✓          | ✓             | ✗         | ✓              | ✓          | ✗        |
-| rcnn               | ✗          | ✓          | ✗             | ✗         | ✓              | ✓          | ✗        |
-| ssd                | ✗          | ✓          | ✗             | ✗         | ✓              | ✗          | ✗        |
-| pose               | ✗          | ✓          | ✗             | ✗         | ✓              | ✓          | ✗        |
-| face               | ✗          | ✓          | ✗             | ✗         | ✓              | ✓          | ✗        |
-| semseg             | ✗          | ✗          | ✗             | ✗         | ✗              | ✗          | ✗        |
+| cls                | ✗          | ✓         | ✓             | ✗         | ✓             | ✓          | ✗       |
+| rcnn               | ✗          | ✓         | ✗             | ✗         | ✓             | ✓          | ✗       |
+| ssd                | ✗          | ✓         | ✗             | ✗         | ✓             | ✗          | ✗       |
+| pose               | ✗          | ✓         | ✗             | ✗         | ✓             | ✓          | ✗       |
+| face               | ✗          | ✓         | ✗             | ✗         | ✓             | ✓          | ✗       |
+| semseg             | ✗          | ✗         | ✗             | ✗         | ✗             | ✗          | ✗       |
 
 - **Functoins**
 
