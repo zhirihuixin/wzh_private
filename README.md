@@ -5,6 +5,8 @@
 # Pet
 Pytorch efficient toolbox (Pet) for Computer Vision.
 
+<p align="center"><img width="50%" src="parsing.jpg" /></p>
+
 ## Introduction
 - [x] **Region-base CNN (fast/rpn/faster/mask/keypoint/parsing rcnn, retinanet)**
 - [x] **Image Classification**
